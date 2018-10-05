@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "nagios core on centos 7"
+title:  "install nagios core on centos 7"
 date:   2018-10-04 19:48:38 +0200
 categories: nagios
 ---
@@ -15,7 +15,7 @@ install wget
 yum install wget
 ```
 
-install prerequisities packages:
+install prerequisites packages:
 ```
 yum install -y gcc glibc glibc-common wget unzip httpd php gd gd-devel perl postfix
 ```
@@ -25,7 +25,7 @@ go in /tmp directory
 cd /tmp
 ```
 
-download latest releas of nagios core:
+download latest release of nagios core:
 ```
 wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.2.tar.gz
 ```
@@ -48,13 +48,13 @@ and compile:
 make all
 ```
 
-create a user and a group for nagios:
+create user and group for nagios:
 
 ```
 make install-groups-users
 ```
 
-and add apache to nagios group:
+add apache to nagios group:
 ```
 usermod -a -G nagios apache
 ```
@@ -97,7 +97,7 @@ firewall-cmd --zone=public --add-port=80/tcp
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 ```
 
-Create nagiosadmin User Account to be able to log into Nagios.
+Create nagios admin User Account to be able to log into Nagios.
 ```
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
@@ -130,4 +130,49 @@ systemctl start nagios.service
 systemctl stop nagios.service
 systemctl restart nagios.service
 systemctl status nagios.service
+```
+
+### Install Plugin
+install some dependencies libraries:
+```
+yum install -y gcc glibc glibc-common make gettext automake autoconf wget openssl-devel net-snmp net-snmp-utils epel-release
+
+yum install -y perl-Net-SNMP
+```
+
+download the plugin into tmp folder:
+```
+wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
+```
+
+extract the file:
+```
+tar -zxvf nagios-plugins.tar.gz
+```
+
+go into the extracted folder:
+```
+cd nagios-plugins-release-2.2.1/
+```
+
+compile and install:
+```
+./tools/setup
+```
+
+```
+./configure
+```
+
+```
+make
+```
+
+```
+make install
+```
+
+restart nagios:
+```
+systemctl restart nagios.service
 ```
