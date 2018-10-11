@@ -41,3 +41,5 @@ docker run --name joomla-demo \
 connect to http://0.0.0.0:8080
 
 and follow the wizard installation of joomla, using "db" and not localhost ad database host.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ne4tGOqSNlo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
