@@ -15,6 +15,12 @@ install wget
 yum install wget
 ```
 
+disabled or in permissive mode. Steps to do this are as follows.
+```
+sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
+setenforce 0
+```
+
 install prerequisites packages:
 ```
 yum install -y gcc glibc glibc-common wget unzip httpd php gd gd-devel perl postfix
@@ -116,7 +122,7 @@ connect to:
 
 http://your-ip/nagios
 
-and login with 
+and login with
 
 username: nagiosadmin
 
