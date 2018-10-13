@@ -25,7 +25,7 @@ first, create and internal network for the dockers:
 ```
 docker network create kong-net
 ```
-# create a container for cassandra db:
+create a container for cassandra db:
 ```
 docker run -d --name kong-cassandra-database \
               --network=kong-net \
@@ -33,7 +33,7 @@ docker run -d --name kong-cassandra-database \
               cassandra:3
 ```
 
-# create a postgre sql container:
+create a postgre sql container:
 ```
 docker run -d --name kong-postgres-database \
               --network=kong-net \
@@ -43,7 +43,7 @@ docker run -d --name kong-postgres-database \
               postgres:9.6
 ```
 
-# create a migration:
+create a migration:
 ```
 docker run --rm \
     --network=kong-net \
@@ -53,7 +53,7 @@ docker run --rm \
     kong:latest kong migrations up
 ```
 
-# create a kong container connected to the postgres and cassandra databases throught the internal network kong-net:
+create a kong container connected to the postgres and cassandra databases throught the internal network kong-net:
 ```
 docker run -d --name kong \
     --network=kong-net \
@@ -75,3 +75,5 @@ docker run -d --name kong \
 check on url http://localhost:8001/
 
 For more info, go on official web site [here](https://konghq.com/)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wK0obqAFut0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
