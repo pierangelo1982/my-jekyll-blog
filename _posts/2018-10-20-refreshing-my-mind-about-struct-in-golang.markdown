@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Refreshing My Mynd About Golang struct using superheroes"
+title: "using superheroes for refresh my mind about Golang structs"
 date: 2018-10-20 15:58:38 +0200
 categories: golang
 ---

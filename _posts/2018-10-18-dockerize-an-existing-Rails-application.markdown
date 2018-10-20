@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dockerize an existing Rails application"
-date: 2018-10-18 15:58:38 +0200
+date: 2018-10-20 15:58:38 +0200
 categories: docker
 ---
 
