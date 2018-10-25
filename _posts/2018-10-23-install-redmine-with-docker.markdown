@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Install Redmine with Docker"
-date: 2018-23-20 10:58:38 +0200
+date: 2018-10-20 10:58:38 +0200
 categories: docker
 ---
 
