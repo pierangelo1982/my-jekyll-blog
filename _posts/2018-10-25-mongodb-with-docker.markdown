@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MongoDB with Docker"
-date: 2018-10-25 8:58:38 +0200
+date: 2018-10-24 19:58:38 +0200
 categories: docker
 ---
 
